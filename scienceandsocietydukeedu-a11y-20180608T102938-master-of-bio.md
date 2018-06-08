@@ -52,11 +52,13 @@ If the font-size is increased to 17px the contrast ratio only needs to meet a 3:
 
 Using the following selector, it can change the size of the two button links without interfering with layout in any way. It will also repair few more contrast errors elsewhere in the site that are using the same color.
 
+<br>
 <hr>
+<br>
+<br>
+<hr>
+<br>
 
-<br>
-<br>
-<hr>
 ## `[id]` attributes on the page are not unique
 The value of an id attribute must be unique to prevent other instances from being overlooked by assistive technologies. [Learn more](https://dequeuniversity.com/rules/axe/2.2/duplicate-id?application=lighthouse).
 
@@ -114,6 +116,25 @@ _DOM path:_ <br>
 <div id="landing-circle-photo">
 ```
 
+```html
+<div id="landing-circle-photo">
+```
+
+```html
+<div id="landing-circle-photo">
+```
+
+```html
+<div id="landing-circle-photo">
+```
+
+```html
+<div id="landing-circle-photo">
+```
+
+```html
+<div id="landing-circle-photo">
+```
 ####Suggested solution:
 
 1. Check if the page needs that ID for CSS for visual reasons.
@@ -134,6 +155,7 @@ _DOM path:_ <br>
 <br>
 <br>
 <hr>
+<br>
 
 ## Links do not have a discernible name
 Link text (and alternate text for images, when used as links) that is discernible, unique, and focusable improves the navigation experience for screen reader users. [Learn more](https://dequeuniversity.com/rules/axe/2.2/link-name?application=lighthouse).
