@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>scienceandsociety-a11y</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+<style type="text/css">
+div.prism-show-language {
+	position: relative;
+}
+
+div.prism-show-language > div.prism-show-language-label {
+	color: black;
+	background-color: #CFCFCF;
+	display: inline-block;
+	position: absolute;
+	bottom: auto;
+	left: auto;
+	top: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	font-size: 0.9em;
+	border-radius: 0 0 0 5px;
+	padding: 0 0.5em;
+	text-shadow: none;
+	z-index: 1;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style>
+img {
+    max-width:99%;
+}
+a {
+  color: blue;
+}
+pre {
+  font: inherit;
+  word-wrap: break-word;
+  background: none;
+  border: none;
+}
+code {
+  font-size: 10px;
+}
+</style>
+
+<h1 id="toc_0">Scienceandsociety.duke.edu/ Assessment</h1>
+
+<p><strong><a href="https://scienceandsociety.duke.edu/">https://scienceandsociety.duke.edu/</a></strong></p>
+
+<p><strong>Screenshot 06/08/2018:</strong></p>
+
+<p><img src="assets/screenshot-of-site.png" alt="Screenshot of site"></p>
+
+<p>Thank you for your interest in improving the accessibility of Scienceand society.duke.edu. </p>
+
+<p>The assessment includes the homepage, landing page representative, and the contact form. The homepage assessment includes global elements such as navigation and search. Those global elements are not repeated in the other documents. When they are fixed on the homepage it should naturally propagate to the subpages. </p>
+
+<p>If you need any assistance in understanding the issues or performing the fixes please reach out to us at web-accessibility@duke.edu or 919-613-4811. We may be able to come to you to assist with the remediation. The services provided by the Web Accessibility Team are free to Duke websites.</p>
+
+<p><details>
+<summary><strong>Table of Contents</strong></summary></p>
+
+<ul class="toc">
+<li>
+<a href="#toc_0">Scienceandsociety.duke.edu/ Assessment</a>
+<ul>
+<li>
+<a href="#toc_1">Links have no :hover states</a>
+<ul>
+<li>
+<a href="#toc_2">Trending new stories [priority]</a>
+<ul>
+<li>
+<a href="#toc_3">Visual location:</a>
+</li>
+<li>
+<a href="#toc_4">CSS location:</a>
+</li>
+<li>
+<a href="#toc_5">Suggested solution:</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_6">View All links [priority]</a>
+<ul>
+<li>
+<a href="#toc_7">Visual location:</a>
+</li>
+<li>
+<a href="#toc_8">CSS location:</a>
+</li>
+<li>
+<a href="#toc_9">Suggested solution:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_10">Some background and foreground colors do not have a sufficient contrast ratio.</a>
+<ul>
+<li>
+<a href="#toc_11">The main navigation links &lt;em&gt;Education, Engagment, Research, About us&lt;/em&gt; have low contrast. [priority]</a>
+<ul>
+<li>
+<a href="#toc_12">Visual location:</a>
+</li>
+<li>
+<a href="#toc_13">HTML location:</a>
+</li>
+<li>
+<a href="#toc_14">Suggested solution:</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_15">The &quot;&lt;em&gt;People, News, Events, Contact Us&lt;/em&gt;&quot;, footer links have low contrast. [priority]</a>
+<ul>
+<li>
+<a href="#toc_16">Visual location:</a>
+</li>
+<li>
+<a href="#toc_17">HTML location:</a>
+</li>
+<li>
+<a href="#toc_18">Suggested solution:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_19">Text in images</a>
+<ul>
+<li>
+<a href="#toc_20">The alt text in all four slider images is incomlete or inadequate [priority]</a>
+</li>
+<li>
+<a href="#toc_21">SciPol slide example:</a>
+<ul>
+<li>
+<a href="#toc_22">Alt text is not accurate:</a>
+</li>
+<li>
+<a href="#toc_23">Too many words:</a>
+</li>
+<li>
+<a href="#toc_24">Text in image has low contrast:</a>
+</li>
+<li>
+<a href="#toc_25">Possible solution options and advice:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_26">Some <code>[id]</code> attributes on the page are not unique</a>
+<ul>
+<li>
+<ul>
+<li>
+<a href="#toc_27">Suggested solution:</a>
+</li>
+<li>
+<a href="#toc_28">HTML location:</a>
+<ul>
+<li>
+<a href="#toc_29">#wrapper x 3</a>
+</li>
+<li>
+<a href="#toc_30">#clear x 14</a>
+</li>
+<li>
+<a href="#toc_31">#updown x 2 &amp; #up x 2 &amp; #down x 2</a>
+</li>
+<li>
+<a href="#toc_32">#listed-thumbs x 6</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_33">Some form elements do not have associated labels</a>
+<ul>
+<li>
+<a href="#toc_34">Form field missing label: [priority]&lt;br&gt;</a>
+<ul>
+<li>
+<a href="#toc_35">Visual location:</a>
+</li>
+<li>
+<a href="#toc_36">HTML location:</a>
+</li>
+<li>
+<a href="#toc_37">Suggested solution:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_38">Some links do not have a discernible name</a>
+<ul>
+<li>
+<a href="#toc_39">Logo is missing alt text [priority]</a>
+<ul>
+<li>
+<a href="#toc_40">Visual location:</a>
+</li>
+<li>
+<a href="#toc_41">HTML location:</a>
+</li>
+<li>
+<a href="#toc_42">Suggested solution:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_43">Multiple issues with each News Entry x 5 [priority]</a>
+<ul>
+<li>
+<ul>
+<li>
+<a href="#toc_44">Visual location:</a>
+</li>
+<li>
+<a href="#toc_45">HTML location:</a>
+</li>
+<li>
+<a href="#toc_46">Suggested solution:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_47"><code>[user-scalable=&quot;no&quot;]</code> is used in the <code>&lt;meta name=&quot;viewport&quot;&gt;</code> element or the <code>[maximum-scale]</code> attribute is less than 5.</a>
+<ul>
+<li>
+<ul>
+<li>
+<a href="#toc_48">HTML location:</a>
+</li>
+<li>
+<a href="#toc_49">Suggested Solution</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_50">Some Interactive controls are not keyboard focusable</a>
+<ul>
+<li>
+<a href="#toc_51">Search box not keyboard accessible [priority]</a>
+<ul>
+<li>
+<a href="#toc_52">Visual location:</a>
+</li>
+<li>
+<a href="#toc_53">HTML location:</a>
+</li>
+<li>
+<a href="#toc_54">Suggested solution:</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_55">Main featured action items not focusable or keyboard accessibile</a>
+<ul>
+<li>
+<a href="#toc_56">Visual location:</a>
+</li>
+<li>
+<a href="#toc_57">HTML location:</a>
+</li>
+<li>
+<a href="#toc_58">Suggested solution:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_59">The user&#39;s focus is not directed to new content added to the page</a>
+<ul>
+<li>
+<a href="#toc_60">Search box toggle</a>
+</li>
+<li>
+<a href="#toc_61">Main navigation sub-menu</a>
+</li>
+<li>
+<a href="#toc_62">Suggested Solution:</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_63">HTML5 landmark elements are not used to improve navigation</a>
+<ul>
+<li>
+<a href="#toc_64">Main content are and footer</a>
+<ul>
+<li>
+<a href="#toc_65">Suggested Solution:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_66">Console Errors</a>
+</li>
+<li>
+<a href="#toc_67">The page does not contain a functional skip link.</a>
+<ul>
+<li>
+<a href="#toc_68">Problem:</a>
+<ul>
+<li>
+<a href="#toc_69">Suggested Solution:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_70">The slideshow carousel is not keyboard or screen reader accessible [priority]</a>
+<ul>
+<li>
+<a href="#toc_71">Problem:</a>
+<ul>
+<li>
+<a href="#toc_72">Visual location:</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_73">What makes a carousel accessible?</a>
+</li>
+<li>
+<a href="#toc_74">Why is this important?</a>
+<ul>
+<li>
+<a href="#toc_75"><em>My Advice</em></a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_76">1) Missing pause button.</a>
+<ul>
+<li>
+<a href="#toc_77">Suggested solution:</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_78">2) Controls can not be hidden.</a>
+<ul>
+<li>
+<a href="#toc_79">Visual location:</a>
+</li>
+<li>
+<a href="#toc_80">Suggested solution:</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_81">3) Controls not keyboard accessible.</a>
+<ul>
+<li>
+<a href="#toc_82">Suggested solution:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_83">DOCTYPE declaration is invalid [priority]</a>
+<ul>
+<li>
+<ul>
+<li>
+<a href="#toc_84">The site does not have a valid DOCTYPE</a>
+</li>
+<li>
+<a href="#toc_85">Only solution:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p></details></p>
+
+<p><br>
+<hr>
+<br>
+<br>
+<hr>
+<br></p>
+
+<h2 id="toc_1">Links have no :hover states</h2>
+
+<p>Links require hover states so people can tell if they are hovering over a link or not.</p>
+
+<h3 id="toc_2">Trending new stories [priority]</h3>
+
+<p>Missing hover state.</p>
+
+<h4 id="toc_3">Visual location:</h4>
+
+<p><img src="assets/link-hover-news.png" alt="no hover state"></p>
+
+<h4 id="toc_4">CSS location:</h4>
+
+<p>Near line 1100 in styles.css</p>
+
+<div><pre><code class="language-css">#home-events h3 a,
+#trending-news h3 a {
+  text-decoration: none;
+  color: #001b62;
+}</code></pre></div>
+
+<h4 id="toc_5">Suggested solution:</h4>
+
+<p>There are a few ways to fix this. The easiest way is to add an underline on hover.</p>
+
+<p>Place after to CSS mentioned above./</p>
+
+<div><pre><code class="language-css">#home-events h3 a:hover
+#home-events h3 a:focus,
+#trending-news h3 a:hover,
+#trending-news h3 a:focus {
+  text-decoration: underline;
+}</code></pre></div>
+
+<p><br>
+<hr></p>
+
+<h3 id="toc_6">View All links [priority]</h3>
+
+<p>Missing hover state.</p>
+
+<h4 id="toc_7">Visual location:</h4>
+
+<p><img src="assets/link-hover-view-all.png" alt="view all links"></p>
+
+<h4 id="toc_8">CSS location:</h4>
+
+<div><pre><code class="language-css">a.all-events:hover {
+  
+  background-image: url(images/blue-arrow-button.png);
+}</code></pre></div>
+
+<h4 id="toc_9">Suggested solution:</h4>
+
+<p>Near line 2639 in style.css add text decoration underline.</p>
+
+<div><pre><code class="language-css">a.all-events:hover {
+  text-decoration:underline;
+  background-image: url(images/blue-arrow-button.png);
+}</code></pre></div>
+
+<p><strong><a href="https://gist.github.com/jhc36-duke-edu/1bb360235dd6b21386c30aa1b4128e68/revisions">Please view Gist</a></strong></p>
+
+<p><br>
+<hr>
+<br>
+<br>
+<hr>
+<br></p>
+
+<h2 id="toc_10">Some background and foreground colors do not have a sufficient contrast ratio.</h2>
+
+<p>Low-contrast text is difficult or impossible for many users to read. <a href="https://dequeuniversity.com/rules/axe/2.2/color-contrast?application=lighthouse">Learn more</a>.</p>
+
+<h3 id="toc_11">The main navigation links <em>Education, Engagment, Research, About us</em> have low contrast. [priority]</h3>
+
+<h4 id="toc_12">Visual location:</h4>
+
+<p><img src="assets/contrast-main-nav.png" alt="Low contrast footer links"></p>
+
+<h4 id="toc_13">HTML location:</h4>
+
+<div><pre><code class="language-markup">&lt;nav id=&quot;nav&quot; role=&quot;navigation&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;&quot;&gt;
+      &lt;a href=&quot;https://scienceandsociety.duke.edu/learn&quot;&gt;Education&lt;/a&gt;
+    &lt;li&gt;
+    &lt;li class=&quot;&quot;&gt;
+        &lt;a href=&quot;https://scienceandsociety.duke.edu/engage&quot;&gt;Engagement&lt;/a&gt;
+  &lt;/li&gt;
+    &lt;li class=&quot;&quot;&gt;
+        &lt;a href=&quot;https://scienceandsociety.duke.edu/research&quot;&gt;Research&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;&quot;&gt;
+      &lt;a href=&quot;https://scienceandsociety.duke.edu/about-us&quot;&gt;About&amp;nbsp;Us&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;ul&gt;
+&lt;/nav&gt;</code></pre></div>
+
+<h4 id="toc_14">Suggested solution:</h4>
+
+<p>Fix any of the following:
+Element has insufficient color contrast of 4.07 (foreground color: #ffffff, background color: #d75404, font size: 12.8pt, font weight: normal). Expected contrast ratio of 4.5:1</p>
+
+<p>If the font-size is increased to 17px the contrast ratio only needs to meet a 3:1 ratio.</p>
+
+<p>Using the following selector, it can change the size of the four links without interfering with the sub-navigation or the layout in any way.</p>
+
+<div><pre><code class="language-css">#landing-header span a, 
+#ma-description h4 a, 
+#ma-header h4 a {
+  font-size: 17px;
+}
+</code></pre></div>
+
+<p><br></p>
+
+<hr>
+
+<h3 id="toc_15">The &quot;<em>People, News, Events, Contact Us</em>&quot;, footer links have low contrast. [priority]</h3>
+
+<h4 id="toc_16">Visual location:</h4>
+
+<p><img src="assets/contrast-footer-links.png" alt="Low contrast footer links"></p>
+
+<h4 id="toc_17">HTML location:</h4>
+
+<div><pre><code class="language-markup">&lt;a href=&quot;https://scienceandsociety.duke.edu/about-us/people/&quot;&gt;People&lt;/a&gt;</code></pre></div>
+
+<h4 id="toc_18">Suggested solution:</h4>
+
+<p>Fix any of the following:
+  Element has insufficient color contrast of 3.57 (foreground color: #cccccc, background color: #666666, font size: 10.5pt, font weight: normal). Expected contrast ratio of 4.5:1`</p>
+
+<p>Change: <a href="https://webaim.org/resources/contrastchecker/?fcolor=CCCCCC&amp;bcolor=666666">#CCCCCC/#666666</a></p>
+
+<p>To: <a href="https://webaim.org/resources/contrastchecker/?fcolor=E6E6E6&amp;bcolor=666666">#E6E6E6/#666666</a></p>
+
+<p>In the generaged styles.css near line 3246 change #CCCCCC to #e6e6e6e;</p>
+
+<div><pre><code class="language-css">#footer-nav ul li a {
+  font-family: &#39;Montserrat&#39;, sans-serif;
+  color: #e6e6e6e; /* new color */
+  font-size: 1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: normal;
+}</code></pre></div>
+
+<p><strong><a href="https://gist.github.com/jhc36-duke-edu/86771057f0851cc99be64a72572b1554/revisions">Please view Gist</a></strong></p>
+
+<p><details>
+<summary><em>Additional debugging details</em></summary></p>
+
+<p><em>Selector path:</em> <br>
+<code>[u&#39;#menu-item-3289 &gt; a[href$=&quot;____/&quot;]&#39;]</code></p>
+
+<p><em>DOM path:</em> <br>
+<code>1,HTML,1,BODY,25,DIV,0,DIV,0,DIV,0,DIV,0,UL,0,LI,0,A</code>
+</details></p>
+
+<hr>
+
+<p><br>
+<br>
+<hr></p>
+
+<h2 id="toc_19">Text in images</h2>
+
+<p>Screen readers cannot read text inside an image. They rely on the alt attribute text.</p>
+
+<p>WCAG <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-text-presentation.html">Images of Text</a> Success Criteia states that text should only be used in images unless it is &quot;<a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-text-presentation.html#key-terms">essential</a>&quot;. Admittedly that is not very specific. </p>
+
+<p>Here is some informal advice that is more black-and-white:</p>
+
+<ol>
+<li>If all the text in the image can not be distiled into the alt attribute it fails the WCAG, without question.</li>
+<li>If there are more than 8 words in an image, its probably too many words, and we won&#39;t be able to defend that images use if a complaint is made.</li>
+</ol>
+
+<h3 id="toc_20">The alt text in all four slider images is incomlete or inadequate [priority]</h3>
+
+<h3 id="toc_21">SciPol slide example:</h3>
+
+<p><img src="assets/image-of-text-bad.png" alt="bad example of images of text"></p>
+
+<h4 id="toc_22">Alt text is not accurate:</h4>
+
+<p>Current alt text is &quot;scipol&quot;. That alt text does not accurately or fully describe the text in the image, depriving the screen reader user of important information.</p>
+
+<h4 id="toc_23">Too many words:</h4>
+
+<p>This is just too many words to put in an alt tag.  This image is also a link, since there is no text in the <code>&lt;a&gt;</code> link the alt text is the only context that would be read to a screen reader. Link text needs to describe what the link does and indicate where it will take the user.</p>
+
+<h4 id="toc_24">Text in image has low contrast:</h4>
+
+<p>Automated tests cannot detect contrast ratios of text in images.  The text in this slide requires a 3:1 contrast ratio.</p>
+
+<p>Using the <a href="https://chrome.google.com/webstore/detail/color-contrast-analyzer/dagdlcijhfbmgkjokkjicnnfimlebcll?hl=en">Color Contrast Analyzer</a> tool we can run tests to help determine if the contrast ratio is adequate.</p>
+
+<p><img src="assets/image-of-text-low-contrast.png" alt="Image of text with low contrast"></p>
+
+<p>Text that has no outline does not meet the minimum contrast ratio.</p>
+
+<h4 id="toc_25">Possible solution options and advice:</h4>
+
+<ol>
+<li>Optionally, Use a real text overlay instead of text in an image.</li>
+<li>Use less words in the image.</li>
+<li>Add more accurate alt text.</li>
+<li>Increase the contrast of the text against the background image or add a dropshadow.</li>
+</ol>
+
+<p><br>
+<hr>
+<br>
+<br>
+<hr></p>
+
+<h2 id="toc_26">Some <code>[id]</code> attributes on the page are not unique</h2>
+
+<p>The value of an id attribute must be unique to prevent other instances from being overlooked by assistive technologies. <a href="https://dequeuniversity.com/rules/axe/2.2/duplicate-id?application=lighthouse">Learn more</a>.</p>
+
+<h4 id="toc_27">Suggested solution:</h4>
+
+<ol>
+<li>Check if the page needs that ID for CSS for visual reasons.</li>
+<li>Check if the page needs that ID for JS for interactive behaviours.</li>
+<li>If it needs the IDs edit the dependent code, then remove duplicate IDs from the HTML.</li>
+</ol>
+
+<h4 id="toc_28">HTML location:</h4>
+
+<h5 id="toc_29">#wrapper x 3</h5>
+
+<div><pre><code class="language-markup">&lt;div id=&quot;wrapper&quot;&gt;&lt;/div&gt;</code></pre></div>
+
+<p><details>
+<summary><em>Additional debugging details</em></summary></p>
+
+<p><em>Selector path:</em> <br> <code>[u&#39;#header &gt; div:nth-child(1)&#39;]</code></p>
+
+<p><em>DOM path:</em> <br>
+<code>1,HTML,1,BODY,8,DIV,0,DIV</code>
+</details></p>
+
+<h5 id="toc_30">#clear x 14</h5>
+
+<div><pre><code class="language-markup">&lt;div id=&quot;clear&quot;&gt;&lt;/div&gt;</code></pre></div>
+
+<p><details>
+<summary><em>Additional debugging details</em></summary></p>
+
+<p><em>Selector path:</em> <br> <code>[u&#39;#form1 &gt; div:nth-child(3)&#39;]</code></p>
+
+<p><em>DOM path:</em> <br>
+<code>1,HTML,1,BODY,8,DIV,0,DIV,5,DIV,0,FORM,2,DIV</code>
+</details></p>
+
+<h5 id="toc_31">#updown x 2 &amp; #up x 2 &amp; #down x 2</h5>
+
+<div><pre><code class="language-markup">&lt;div id=&quot;updown&quot;&gt;
+   &lt;a id=&quot;up&quot; class=&quot;news-up&quot;&gt;Up&lt;/a&gt;
+   &lt;a id=&quot;down&quot; class=&quot;news-down&quot;&gt;Down&lt;/a&gt;
+&lt;/div&gt;</code></pre></div>
+
+<p><details>
+<summary><em>Additional debugging details</em></summary></p>
+
+<p><em>Selector path:</em> <br> <code>[u&#39;div:nth-child(1) &gt; a.news-up&#39;]</code></p>
+
+<p><em>DOM path:</em> <br>
+<code>1,HTML,1,BODY,12,DIV,1,DIV,0,DIV,0,DIV,0,A</code>
+</details></p>
+
+<h5 id="toc_32">#listed-thumbs x 6</h5>
+
+<div><pre><code class="language-markup">&lt;div id=&quot;listed-thumbs&quot;&gt;&lt;img width=&quot;100&quot; height=&quot;100&quot; src=&quot;https://scienceandsociety.duke.edu/wordpress/wp-content/uploads/Uber-AV-100x100.png&quot; class=&quot;attachment-thumbnail size-thumbnail wp-post-image&quot; alt=&quot;&quot;&gt;&lt;/div&gt;</code></pre></div>
+
+<p><details>
+<summary><em>Additional debugging details</em></summary></p>
+
+<p><em>Selector path:</em> <br> <code>[u&#39;#trending-news &gt; div:nth-child(1)&#39;]</code></p>
+
+<p><em>DOM path:</em> <br>
+<code>1,HTML,1,BODY,12,DIV,1,DIV,0,DIV,0,DIV</code>
+</details></p>
+
+<hr>
+
+<p><br>
+<br>
+<hr></p>
+
+<h2 id="toc_33">Some form elements do not have associated labels</h2>
+
+<p>Labels ensure that form controls are announced properly by assistive technologies, like screen readers. <a href="https://dequeuniversity.com/rules/axe/2.2/label?application=lighthouse">Learn more</a>.</p>
+
+<h3 id="toc_34">Form field missing label: [priority]<br></h3>
+
+<h4 id="toc_35">Visual location:</h4>
+
+<p><img src="assets/label-email-signup.png" alt="email form"></p>
+
+<h4 id="toc_36">HTML location:</h4>
+
+<div><pre><code class="language-markup">&lt;input type=&quot;email&quot; value=&quot;&quot; name=&quot;EMAIL&quot; class=&quot;required email&quot; id=&quot;mce-EMAIL&quot; placeholder=&quot;Join our newsletter&quot;&gt;</code></pre></div>
+
+<h4 id="toc_37">Suggested solution:</h4>
+
+<p>Add a label and associate it with the form field. Optionally it can be visually hidden so it does not effect the layout. Using the .visually-hidden utility class.</p>
+
+<p>Add this HTML:</p>
+
+<div><pre><code class="language-markup">&lt;label for=&quot;mce-EMAIL&quot; class=&quot;visually-hidden&quot;&gt;Subscribe to our newsletter&lt;/label&gt;` to associate the label with that form field.</code></pre></div>
+
+<p><strong><a href="https://gist.github.com/jhc36-duke-edu/67dcfccab86b2b8eb318233afadb1b85/revisions">Please view Gist</a></strong></p>
+
+<p>Add this CSS to hide the label visually, but keep it availible to screen readers.</p>
+
+<div><pre><code class="language-css">.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px; 
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}</code></pre></div>
+
+<p><sub>For more options see &#39;Additional debugging details&#39; below.</sub></p>
+
+<p><details>
+<summary><em>Additional debugging details</em></summary></p>
+
+<p><em>Selector path:</em> <br> <code>[u&#39;#mce-EMAIL&#39;]</code>
+<code>[u&#39;#mce-EMAIL&#39;]</code></p>
+
+<p><em>DOM path:</em> <br>
+<code>1,HTML,1,BODY,25,DIV,0,DIV,2,DIV,0,FORM,0,DIV,0,DIV,0,INPUT</code></p>
+
+<p><em>Summary:</em> <br>
+  <pre>Fix any of the following:
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible
+  Form element does not have an implicit (wrapped) <label>
+  Form element does not have an explicit <label>
+  Element has no title attribute or the title attribute is empty
+  </pre>
+</details>
+<hr></p>
+
+<p><br>
+<br>
+<hr></p>
+
+<h2 id="toc_38">Some links do not have a discernible name</h2>
+
+<p>Link text (and alternate text for images, when used as links) that is discernible, unique, and focusable improves the navigation experience for screen reader users. <a href="https://dequeuniversity.com/rules/axe/2.2/link-name?application=lighthouse">Learn more</a>.</p>
+
+<h3 id="toc_39">Logo is missing alt text [priority]</h3>
+
+<h4 id="toc_40">Visual location:</h4>
+
+<p><img src="assets/link-name-logo%20missing-alt.png" alt="assets/logo missing alt"></p>
+
+<h4 id="toc_41">HTML location:</h4>
+
+<div><pre><code class="language-markup">&lt;a href=&quot;https://scienceandsociety.duke.edu/&quot;&gt;
+  &lt;img src=&quot;https://scienceandsociety.duke.edu/wordpress/wp-content/themes/dukess2014/images/header-logo2.png&quot; alt=&quot;&quot;&gt;
+&lt;/a&gt;</code></pre></div>
+
+<h4 id="toc_42">Suggested solution:</h4>
+
+<p>Adding <code>alt</code> attribute to image element will provide sufficient text to make the link accessible.</p>
+
+<p>Since this is the header logo that takes people back to the home page, a good alt tag would be <code>alt=&quot;Science and Society Home&quot;</code>.</p>
+
+<p><br></p>
+
+<p><details>
+<summary><em>Additional debugging details</em></summary></p>
+
+<p><em>Selector path:</em> <br> <code>[u&#39;#logo &gt; a&#39;]</code></p>
+
+<p><em>DOM path:</em> <br>
+<code>1,HTML,1,BODY,8,DIV,0,DIV,0,DIV,0,A</code></p>
+
+<p><em>Summary:</em> <br>
+  <pre>Fix all of the following:
+  Element is in tab order and does not have accessible text</p>
+
+<p>Fix any of the following:
+  Element does not have text that is visible to screen readers
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible
+  Element&#39;s default semantics were not overridden with role=&quot;presentation&quot;
+  Element&#39;s default semantics were not overridden with role=&quot;none&quot;
+  </pre>
+</details>
+<br>
+<hr>
+<br>
+<br>
+<hr></p>
+
+<h2 id="toc_43">Multiple issues with each News Entry x 5 [priority]</h2>
+
+<h4 id="toc_44">Visual location:</h4>
+
+<p><img src="assets/multiple-trending-news.png" alt="Trending news location"></p>
+
+<h4 id="toc_45">HTML location:</h4>
+
+<div><pre><code class="language-markup">&lt;li class=&quot;news_entry&quot;&gt;
+   ...
+&lt;/li&gt;</code></pre></div>
+
+<h4 id="toc_46">Suggested solution:</h4>
+
+<p>There are multiple issues with this template.<br>
+    1. Empty alt tag<br>
+    2. Using <code>&lt;div id=&#39;clear&#39;&gt;&lt;/div&gt;</code> multiple times. ID&#39;s are required to be unique. This is both required to make the HTML validate as well as making the site compatible with assistive technologies. After some testing, it looks like this <code>&lt;div&gt;</code> serves no purpose anyway. It can just be deleted<br>
+    3. Stray empty <code>&lt;a&gt;</code> tag, which can also be deleted.<br></p>
+
+<p><strong><a href="https://gist.github.com/jhc36-duke-edu/ab4e77831b50ebdc4e51411ec1462922/revisions">Please see Gist for details on what to fix on all the issues</a></strong></p>
+
+<p><details>
+<summary><strong>Additional debugging details</strong></summary></p>
+
+<p><em>Selector path:</em> <br> <code>[u&#39;#pane-target &gt; ul &gt; li:nth-child(3) &gt; div:nth-child(2) &gt; p &gt; a&#39;]</code></p>
+
+<p><em>DOM path:</em> <br>
+<code>1,HTML,1,BODY,12,DIV,1,DIV,0,DIV,2,DIV,0,UL,2,LI,1,DIV,1,P,1,A</code></p>
+
+<p><em>Summary:</em> <br>
+  <pre>
+Fix all of the following:
+  Element is in tab order and does not have accessible text</p>
+
+<p>Fix any of the following:
+  Element does not have text that is visible to screen readers
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible
+  Element&#39;s default semantics were not overridden with role=&quot;presentation&quot;
+  Element&#39;s default semantics were not overridden with role=&quot;none&quot;
+  </pre>
+</details>
+<br>
+<hr>
+<br>
+<br>
+<hr></p>
+
+<h2 id="toc_47"><code>[user-scalable=&quot;no&quot;]</code> is used in the <code>&lt;meta name=&quot;viewport&quot;&gt;</code> element or the <code>[maximum-scale]</code> attribute is less than 5.</h2>
+
+<p>Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. <a href="https://dequeuniversity.com/rules/axe/2.2/meta-viewport?application=lighthouse">Learn more</a>.</p>
+
+<h4 id="toc_48">HTML location:</h4>
+
+<div><pre><code class="language-markup">&lt;head&gt;
+...
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0&quot;&gt;
+...
+&lt;/head&gt;</code></pre></div>
+
+<h4 id="toc_49">Suggested Solution</h4>
+
+<p>Change maximum-scale attribute to 5.</p>
+
+<div><pre><code class="language-markup">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=5&quot;&gt;</code></pre></div>
+
+<p><br>
+<hr>
+<br>
+<br>
+<hr></p>
+
+<h2 id="toc_50">Some Interactive controls are not keyboard focusable</h2>
+
+<p>Custom interactive controls are keyboard focusable and display a focus indicator. <a href="https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard">Learn more</a>.
+<br></p>
+
+<h3 id="toc_51">Search box not keyboard accessible [priority]</h3>
+
+<p>Keyboard accessible Search is particularly important. Some keyboard users use search as thier primary method to find content on websites becasuse it can be easier than navigating the whole site. Also, if a keyboard user gives up navigating the website for some reason, search may be thier final resort to find information.</p>
+
+<h4 id="toc_52">Visual location:</h4>
+
+<p><img src="assets/keyboard-search.png" alt="Search box"></p>
+
+<h4 id="toc_53">HTML location:</h4>
+
+<div><pre><code class="language-markup">&lt;div id=&quot;search-div&quot; style=&quot;display: block;&quot;&gt; 
+  ...
+&lt;/div&gt;   </code></pre></div>
+
+<p>Innaccessible JS behavior</p>
+
+<div><pre><code class="language-javascript">
+$(&#39;document&#39;).ready(function() {
+
+  $(&#39;#show1&#39;).click(function() {
+
+    $(&#39;#search-div&#39;).slideToggle(400, function() {
+      if ($(&#39;#search-div&#39;).is(&#39;:visible&#39;)) {
+        $(&#39;#search2&#39;).focus();
+      }
+    });
+  });
+});</code></pre></div>
+
+<h4 id="toc_54">Suggested solution:</h4>
+
+<p>1) On trigger element and the target element, remove the following attributes:<br>
+ <code>class=&#39;fade&#39;</code> <br>
+ <code>style=&quot;opacity: 0&quot;</code><br>
+Those attibutes and the related Javascript is wreaking havoc on keyboard accessibility and visibility.</p>
+
+<p>2) Update the current search toggle HTML with this code</p>
+
+<div><pre><code class="language-markup">&lt;li&gt;
+    &lt;a href=&quot;#search-div&quot; id=&quot;show1&quot; aria-role=&quot;button&quot; aria-controls=&quot;search-div&quot; aria-expanded=&quot;true&quot; aria-haspopup=&quot;true&quot;&gt;
+        &lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;./scienceandociety_files/search-a.png&quot;&gt;
+    &lt;/a&gt;
+&lt;/li&gt;</code></pre></div>
+
+<p><strong><a href="https://gist.github.com/jhc36-duke-edu/71326bd0d14ddac6ed6ae36606268d6a/revisions">Please see Gist</a></strong></p>
+
+<p>3) Replace the old javascript located in the <code>&lt;head&gt;</code> of the HTML that was controling the search toggle behavior with this accessible version:</p>
+
+<div><pre><code class="language-javascript">$(document).ready(function() {
+    $(&#39;#show1&#39;).click(function () {
+        toggle(&#39;search-div&#39;, &#39;show1&#39;);
+        return false
+    });
+    function toggle(id, id2) {
+        var n = document.getElementById(id);
+        if (n.style.display != &#39;none&#39;) {
+            n.style.display = &#39;none&#39;;
+            document.getElementById(id2).setAttribute(&#39;aria-expanded&#39;, &#39;false&#39;);
+            document.getElementById(id).setAttribute(&#39;aria-hidden&#39;, &#39;true&#39;);
+        } else {
+            n.style.display = &#39;block&#39;;
+            document.getElementById(id2).setAttribute(&#39;aria-expanded&#39;, &#39;true&#39;);
+            document.getElementById(id).setAttribute(&#39;aria-hidden&#39;, &#39;false&#39;);
+        }
+    }
+});</code></pre></div>
+
+<p><strong><a href="https://gist.github.com/jhc36-duke-edu/5fa7e63cdf43df7a9c47966296030529/revisions">Please view Gist</a></strong></p>
+
+<p><br>
+<hr>
+<br></p>
+
+<h3 id="toc_55">Main featured action items not focusable or keyboard accessibile</h3>
+
+<h4 id="toc_56">Visual location:</h4>
+
+<p><img src="assets/keyboard-fail-features.png" alt="feature fail"></p>
+
+<h4 id="toc_57">HTML location:</h4>
+
+<div><pre><code class="language-markup">&lt;div id=&quot;features&quot;&gt;
+  &lt;div id=&quot;ma-feature&quot; class=&quot;pin&quot; onclick=&quot;window.open(&#39;ma&#39;, &#39;_self&#39;)&quot; style=&quot;cursor:pointer;&quot; tabindex=&quot;0&quot;&gt;
+    ...
+  &lt;/div&gt;
+  &lt;div id=&quot;calendar-feature&quot; class=&quot;pin&quot; onclick=&quot;window.open(&#39;https://scienceandsociety.duke.edu/learn/duke-scipol-summer-institute/&#39;, &#39;_self&#39;)&quot; style=&quot;cursor:pointer;&quot;&gt;
+    ...
+  &lt;/div&gt;        
+  &lt;div id=&quot;news-feature&quot; class=&quot;pin&quot; onclick=&quot;window.open(&#39;https://scienceandsociety.duke.edu/learn/undergraduate-programs/reimagining-medicine/&#39;, &#39;_self&#39;)&quot; style=&quot;cursor:pointer;&quot;&gt;
+    ...
+  &lt;/div&gt;        
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_58">Suggested solution:</h4>
+
+<p>There is no reason compelling reason for these elements not to be a normal <code>&lt;a&gt;</code> link. It greatly simplifies the markup and will fix multiple accessibilty problems in the process.</p>
+
+<div><pre><code class="language-markup">&lt;div id=&quot;features&quot;&gt;
+  &lt;a id=&quot;ma-feature&quot; class=&quot;pin&quot; href=&quot;/learn/ma/&quot;&gt;
+    ...
+  &lt;/a&gt;
+  &lt;a id=&quot;calendar-feature&quot; class=&quot;pin&quot; href=&quot;/learn/duke-scipol-summer-institute/&quot;&gt;
+    ...
+  &lt;/a&gt;      
+  &lt;a id=&quot;news-feature&quot; class=&quot;pin&quot; href=&quot;/learn/undergraduate-programs/reimagining-medicine&quot;&gt;
+    ...
+  &lt;/a&gt;      
+&lt;/div&gt;</code></pre></div>
+
+<p><strong><a href="https://gist.github.com/jhc36-duke-edu/92dfc8a1ced02c1c6c21bab288a65b94/revisions">Please view Gist</a></strong></p>
+
+<p><br>
+<hr>
+<br>
+<br>
+<hr>
+<br></p>
+
+<h2 id="toc_59">The user&#39;s focus is not directed to new content added to the page</h2>
+
+<p>If new content, such as a dialog, is added to the page, the user&#39;s focus is directed to it. <a href="https://developers.google.com/web/fundamentals/accessibility/how-to-review#start_with_the_keyboard">Learn more</a>.</p>
+
+<h3 id="toc_60">Search box toggle</h3>
+
+<p>This will be fixed by implementing the search fix above.</p>
+
+<h3 id="toc_61">Main navigation sub-menu</h3>
+
+<p>Ideally, the main navigation should be expanable via the keyboard also, but since all the links are also availible on thier landing pages, it technically passes.  But adding some very basic keyboard functionality is a simple cut-paste job.  The following JS will expand the selected item&#39;s sub-navigation when a user hits the down arrow.</p>
+
+<h3 id="toc_62">Suggested Solution:</h3>
+
+<p>Add this JS inside any existing or new document.ready:</p>
+
+<div><pre><code class="language-javascript">$(&#39;#nav &gt; ul &gt; li&#39;).on(&#39;focus&#39;, &#39;&gt; a&#39;, function(e) {
+  $this = jQuery(this);
+
+  $this.attr(&#39;aria-haspopup&#39;, &#39;true&#39;).attr(&#39;aria-expanded&#39;, &#39;false&#39;);
+  $this.parent().find(&#39;&gt; ul&#39;).css(&#39;display&#39;, &#39;none&#39;).css(&#39;visibility&#39;, &#39;hidden&#39;);
+
+  $this.keydown(function(e) {
+      if (e.keyCode === 40) {
+          jQuery(this).attr(&#39;aria-expanded&#39;, &#39;true&#39;);
+          jQuery(this).parent().find(&#39;&gt; ul&#39;).css(&#39;display&#39;, &#39;block&#39;).css(&#39;visibility&#39;, &#39;visible&#39;).attr(&#39;aria-hidden&#39;, &#39;false&#39;);
+          return false;
+      }
+      if (e.keyCode === 38) {
+          jQuery(this).attr(&#39;aria-expanded&#39;, &#39;false&#39;);
+          jQuery(this).parent().find(&#39;&gt; ul&#39;).css(&#39;display&#39;, &#39;none&#39;).css(&#39;visibility&#39;, &#39;hidden&#39;).attr(&#39;aria-hidden&#39;, &#39;true&#39;);
+          return false;
+      }
+  });
+});</code></pre></div>
+
+<p><br>
+<hr>
+<br>
+<br>
+<hr>
+<br></p>
+
+<h2 id="toc_63">HTML5 landmark elements are not used to improve navigation</h2>
+
+<p>Landmark elements (<code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, etc.) are used to improve the keyboard navigation of the page for assistive technology. <a href="https://developers.google.com/web/fundamentals/accessibility/how-to-review#take_advantage_of_headings_and_landmarks">Learn more</a>.</p>
+
+<h3 id="toc_64">Main content are and footer</h3>
+
+<h4 id="toc_65">Suggested Solution:</h4>
+
+<p>Add an element to wrap the content area. Currently there is none, it will need added because the main area should all be in one.</p>
+
+<p>Add a <code>&lt;main&gt;</code> element to wrap all content area&#39;s <code>&lt;div&gt;</code> elements under one element.</p>
+
+<p>Change the Footer&#39;s elment from <code>&lt;div&gt;</code>:</p>
+
+<div><pre><code class="language-markup">&lt;div id=&quot;footer&quot;&gt;
+  ...
+&lt;/div&gt;</code></pre></div>
+
+<p>to <code>&lt;footer&gt;</code>:</p>
+
+<div><pre><code class="language-markup">&lt;footer id=&quot;footer&quot;&gt;
+  ...
+&lt;/footer&gt;</code></pre></div>
+
+<p><br>
+<hr>
+<br>
+<br>
+<hr>
+<br></p>
+
+<h2 id="toc_66">Console Errors</h2>
+
+<p>Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.</p>
+
+<pre style="color:darkred">
+(index):47 Mixed Content: The page at 'https://scienceandsociety.duke.edu/' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Oswald%3A400%2C300%7COpen+Sans%3A400%2C300&ver=4.9.5'. This request has been blocked; the content must be served over HTTPS.
+</pre>
+
+<pre style="color:darkred">
+(index):891 Uncaught TypeError: Cannot read property 'left' of undefined
+    at HTMLDocument.<anonymous> ((index):891)
+    at l (jquery.min.js:2)
+    at Object.fireWith [as resolveWith] (jquery.min.js:2)
+    at Function.ready (jquery.min.js:2)
+    at HTMLDocument.A (jquery.min.js:2)
+(anonymous) @ (index):891
+l @ jquery.min.js:2
+fireWith @ jquery.min.js:2
+ready @ jquery.min.js:2
+A @ jquery.min.js:2
+</pre>
+
+<p><br>
+<hr>
+<br>
+<br>
+<hr>
+<br></p>
+
+<h2 id="toc_67">The page does not contain a functional skip link.</h2>
+
+<p>Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. <a href="https://dequeuniversity.com/rules/axe/2.2/bypass">Learn more</a>.</p>
+
+<h3 id="toc_68">Problem:</h3>
+
+<p>Missing bypass block for keyboard users to skip over the menu area when tabbing through a page.</p>
+
+<h4 id="toc_69">Suggested Solution:</h4>
+
+<p>Add a skip-to link bypass block.</p>
+
+<p>The skip-to bypass block needs to be the first link on the page. When a user hits the tab key it gives it focus and as a result becomes visible. If the user hits the enter key while it is focused it will jump to the main content area.</p>
+
+<p>HTML:</p>
+
+<p>Trigger is the first link in the <body> element</p>
+
+<div><pre><code class="language-markup">&lt;div id=&quot;skip-link&quot;&gt;
+    &lt;a href=&quot;#main-content&quot; class=&quot;element-invisible element-focusable&quot;&gt;Skip to main content&lt;/a&gt;
+&lt;/div&gt;</code></pre></div>
+
+<p>Target is added above the main content.
+<code>html
+&lt;a id=&quot;main-content&quot;&gt;&lt;/a&gt;
+</code></p>
+
+<p>CSS:
+This css may already be available in the theme, If not, please add:</p>
+
+<div><pre><code class="language-css">.element-invisible {
+    margin: 0;
+    padding: 0;
+    width: 1px;
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+    overflow: hidden;
+    height: 1px;
+}
+.element-invisible.element-focusable:active, .element-invisible.element-focusable:focus {
+    position: static !important;
+    clip: auto;
+    overflow: visible;
+    height: auto;
+}</code></pre></div>
+
+<p><strong><a href="https://drive.google.com/open?id=0B_l64ZEIjqnlal9vcGcwck1YVW8">Please Watch video</a></strong></p>
+
+<p><br>
+<hr>
+<br>
+<br>
+<hr>
+<br></p>
+
+<h2 id="toc_70">The slideshow carousel is not keyboard or screen reader accessible [priority]</h2>
+
+<p>Inaccessible Carousels are the  most difficult and most time consuming issue on any website. </p>
+
+<p>Keyboard accessibility is one of the most important aspects of web accessibility. Many users with motor disabilities rely on a keyboard. Blind users also typically use a keyboard for navigation. Some people have tremors which don&#39;t allow for fine muscle control. <a href="https://webaim.org/techniques/keyboard/">Learn more</a></p>
+
+<h3 id="toc_71">Problem:</h3>
+
+<p>This site uses the Wordpress implementation of Soliloquy. It is not accessible for a variety of reasons detailed below.</p>
+
+<h4 id="toc_72">Visual location:</h4>
+
+<p><img src="assets/keyboard-slide-show.png" alt="inaacessible slider"></p>
+
+<h3 id="toc_73">What makes a carousel accessible?</h3>
+
+<ul>
+<li>Users must be able to pause carousel movement because it can be too fast or distracting, making text hard to read.</li>
+<li>All functionality, including navigating between carousel items, must be operable by keyboard.</li>
+<li>Changes to carousel items must be communicated to all users, including screen reader users.</li>
+<li>The keyboard position (“focus”) is managed in a reasonable and comprehensible fashion.</li>
+<li>Note: Carousels are disputed from a usability perspective because their content can be hard to discover. Ensuring accessibility can also improve usability.</li>
+</ul>
+
+<h3 id="toc_74">Why is this important?</h3>
+
+<p>Typically, carousels are prominently located and are used to provide navigation or show page content. Accessible carousels are essential for many website users including:</p>
+
+<ul>
+<li>People using keyboard navigation and voice input software can navigate between individual items.</li>
+<li>People using screen readers will understand which item is currently shown and how to navigate between items.</li>
+<li>People who are distracted by movement can pause animations.</li>
+<li>People who need more time to read can pause animations, providing them with sufficient time to read and understand carousel content.</li>
+</ul>
+
+<h4 id="toc_75"><em>My Advice</em></h4>
+
+<p>Because of the inherit usability and accessibility issues all slideshow provide, I always recommend removing them. This can probably be accomplished by having only one slide in the rotator.</p>
+
+<p>That said, if people must keep the slideshow here are a few easy things you can to to help mitigate the issues.</p>
+
+<h3 id="toc_76">1) Missing pause button.</h3>
+
+<p>For full compliance Carousels are not allowed to auto-advance. </p>
+
+<p>If the website chooses to keep the autoadvance functionality, it must have a pause button. </p>
+
+<h4 id="toc_77">Suggested solution:</h4>
+
+<p>This might be possible by changing the slideshows configuration. I expect that there would be some CSS necessary to place it. Documentation on this can be found on <a href="https://soliloquywp.com/docs/configuring-your-slider/">Configuring Your Slide</a> See &quot;Show Pause/Play Controls&quot;</p>
+
+<h3 id="toc_78">2) Controls can not be hidden.</h3>
+
+<p>Currently the user must hover over the carousel to see the next and back buttons/links with a mouse. Some people cannot use a mouse, so they would never know they could control it. They need to be visible at all times.</p>
+
+<h4 id="toc_79">Visual location:</h4>
+
+<p><img src="assets/slider-arrows.png" alt="slider arrows">;</p>
+
+<h4 id="toc_80">Suggested solution:</h4>
+
+<p>Add the following CSS to any stylesheet to make the next and back arrow visible at all times.</p>
+
+<div><pre><code class="language-css">.soliloquy-outer-container .soliloquy-theme-classic .soliloquy-controls-direction {
+  display: block;
+}</code></pre></div>
+
+<h3 id="toc_81">3) Controls not keyboard accessible.</h3>
+
+<p><code>outline:none</code> is used on the elements which hides the keyboard focus indicator. If the keyboard focus indicator is hidden, its not keyboard accessible.</p>
+
+<h4 id="toc_82">Suggested solution:</h4>
+
+<p>Add the following CSS to any stylesheet to make the next and back arrow visible at all times.</p>
+
+<div><pre><code class="language-css">.soliloquy-outer-container .soliloquy-container a:focus {
+    outline: auto 2px Highlight;
+    outline: auto 5px -webkit-focus-ring-color;
+}</code></pre></div>
+
+<p>Expected result when element has keyboard focus:</p>
+
+<p><img src="assets/keyboard-focus.png" alt="element with keyboard focus"></p>
+
+<p><br>
+<hr>
+<br>
+<br>
+<hr>
+<br></p>
+
+<h2 id="toc_83">DOCTYPE declaration is invalid [priority]</h2>
+
+<p>The DOCTYPE declaration must be the very first thing in your HTML document, before the <code>&lt;html&gt;</code> tag.</p>
+
+<h4 id="toc_84">The site does not have a valid DOCTYPE</h4>
+
+<p>Current HTML</p>
+
+<div><pre><code class="language-markup">&lt;!DOCTYPE&gt;</code></pre></div>
+
+<h4 id="toc_85">Only solution:</h4>
+
+<div><pre><code class="language-markup">&lt;!DOCTYPE html&gt;</code></pre></div>
+
+<p>A valid DOCTYPE declaration is requried to validate the code:</p>
+
+<p><a href="https://validator.w3.org/check?uri=https%3A%2F%2Fscienceandsociety.duke.edu%2Flearn%2Fma%2F&amp;charset=%28detect+automatically%29&amp;doctype=Inline&amp;group=0&amp;verbose=1&amp;user-agent=W3C_Validator%2F1.3+http%3A%2F%2Fvalidator.w3.org%2Fservices">https://validator.w3.org/check?uri=https%3A%2F%2Fscienceandsociety.duke.edu%2Flearn%2Fma%2F&amp;charset=%28detect+automatically%29&amp;doctype=Inline&amp;group=0&amp;verbose=1&amp;user-agent=W3C_Validator%2F1.3+http%3A%2F%2Fvalidator.w3.org%2Fservices</a></p>
+
+<p>After it is fixed, the website developer should look through the errors.</p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.markup={comment:/<!--[\w\W]*?-->/,prolog:/<\?[\w\W]+?\?>/,doctype:/<!DOCTYPE[\w\W]+?>/,cdata:/<!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,inside:{tag:{pattern:/^<\/?[^\s>\/]+/i,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,inside:{punctuation:/[=>"']/}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:/&#?[\da-z]{1,8};/i},Prism.hooks.add("wrap",function(a){"entity"===a.type&&(a.attributes.title=a.content.replace(/&amp;/,"&"))}),Prism.languages.xml=Prism.languages.markup,Prism.languages.html=Prism.languages.markup,Prism.languages.mathml=Prism.languages.markup,Prism.languages.svg=Prism.languages.markup;
+</script>
+
+<script type="text/javascript">
+Prism.languages.css={comment:/\/\*[\w\W]*?\*\//,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*\{))/i,inside:{rule:/@[\w-]+/}},url:/url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,selector:/[^\{\}\s][^\{\};]*?(?=\s*\{)/,string:/("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/,property:/(\b|\B)[\w-]+(?=\s*:)/i,important:/\B!important\b/i,"function":/[-a-z0-9]+(?=\()/i,punctuation:/[(){};:]/},Prism.languages.css.atrule.inside.rest=Prism.util.clone(Prism.languages.css),Prism.languages.markup&&(Prism.languages.insertBefore("markup","tag",{style:{pattern:/(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i,lookbehind:!0,inside:Prism.languages.css,alias:"language-css"}}),Prism.languages.insertBefore("inside","attr-value",{"style-attr":{pattern:/\s*style=("|').*?\1/i,inside:{"attr-name":{pattern:/^\s*style/i,inside:Prism.languages.markup.tag.inside},punctuation:/^\s*=\s*['"]|['"]\s*$/,"attr-value":{pattern:/.+/i,inside:Prism.languages.css}},alias:"language-css"}},Prism.languages.markup.tag));
+</script>
+
+<script type="text/javascript">
+Prism.languages.css.selector={pattern:/[^\{\}\s][^\{\}]*(?=\s*\{)/,inside:{"pseudo-element":/:(?:after|before|first-letter|first-line|selection)|::[-\w]+/,"pseudo-class":/:[-\w]+(?:\(.*\))?/,"class":/\.[-:\.\w]+/,id:/#[-:\.\w]+/}},Prism.languages.insertBefore("css","function",{hexcode:/#[\da-f]{3,6}/i,entity:/\\[\da-f]{1,8}/i,number:/[\d%\.]+/});
+</script>
+
+<script type="text/javascript">
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,number:/\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,"function":/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i}),Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,lookbehind:!0,greedy:!0}}),Prism.languages.insertBefore("javascript","class-name",{"template-string":{pattern:/`(?:\\\\|\\?[^\\])*?`/,greedy:!0,inside:{interpolation:{pattern:/\$\{[^}]+\}/,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:Prism.languages.javascript}},string:/[\s\S]+/}}}),Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,lookbehind:!0,inside:Prism.languages.javascript,alias:"language-javascript"}}),Prism.languages.js=Prism.languages.javascript;
+</script>
+
+<script type="text/javascript">
+!function(){if("undefined"!=typeof self&&self.Prism&&self.document){var e={html:"HTML",xml:"XML",svg:"SVG",mathml:"MathML",css:"CSS",clike:"C-like",javascript:"JavaScript",abap:"ABAP",actionscript:"ActionScript",apacheconf:"Apache Configuration",apl:"APL",applescript:"AppleScript",asciidoc:"AsciiDoc",aspnet:"ASP.NET (C#)",autoit:"AutoIt",autohotkey:"AutoHotkey",basic:"BASIC",csharp:"C#",cpp:"C++",coffeescript:"CoffeeScript","css-extras":"CSS Extras",fsharp:"F#",glsl:"GLSL",http:"HTTP",inform7:"Inform 7",json:"JSON",latex:"LaTeX",lolcode:"LOLCODE",matlab:"MATLAB",mel:"MEL",nasm:"NASM",nginx:"nginx",nsis:"NSIS",objectivec:"Objective-C",ocaml:"OCaml",parigp:"PARI/GP",php:"PHP","php-extras":"PHP Extras",powershell:"PowerShell",jsx:"React JSX",rest:"reST (reStructuredText)",sas:"SAS",sass:"Sass (Sass)",scss:"Sass (Scss)",sql:"SQL",typescript:"TypeScript",vhdl:"VHDL",vim:"vim",wiki:"Wiki markup",yaml:"YAML"};Prism.hooks.add("before-highlight",function(s){var a=s.element.parentNode;if(a&&/pre/i.test(a.nodeName)){var t,i,r=a.getAttribute("data-language")||e[s.language]||s.language.substring(0,1).toUpperCase()+s.language.substring(1),l=a.previousSibling;l&&/\s*\bprism-show-language\b\s*/.test(l.className)&&l.firstChild&&/\s*\bprism-show-language-label\b\s*/.test(l.firstChild.className)?i=l.firstChild:(t=document.createElement("div"),i=document.createElement("div"),i.className="prism-show-language-label",t.className="prism-show-language",t.appendChild(i),a.parentNode.insertBefore(t,a)),i.innerHTML=r}})}}();
+</script>
+
+
+</body>
+
+</html>
